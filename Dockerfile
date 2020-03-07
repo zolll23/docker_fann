@@ -6,4 +6,8 @@ RUN apt-get update &&\
     pecl install fann &&\
     docker-php-ext-enable fann
 
+RUN apt-get update && apt-get install -y libzip-dev libpng-dev && docker-php-ext-install zip
+
+RUN docker-php-ext-install gd
+    
 RUN rm -rf /var/lib/apt/lists/*
