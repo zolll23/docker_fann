@@ -1,0 +1,18 @@
+{
+    "name": "vpa/fann",
+    "description": "Neural Network for FANN database",
+    "type": "project",
+    "license": "GPU",
+    "authors": [
+        {
+            "name": "Andrey Pahomov",
+            "email": "andrey.pahomov@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "VPA\\": "vendor/VPA/"
+        }
+    }
+}
