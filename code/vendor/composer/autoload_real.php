@@ -13,6 +13,9 @@ class ComposerAutoloaderInitff41a634b7ac7b9447a128c96d07cf08
         }
     }
 
+    /**
+     * @return \Composer\Autoload\ClassLoader
+     */
     public static function getLoader()
     {
         if (null !== self::$loader) {
@@ -47,6 +50,24 @@ class ComposerAutoloaderInitff41a634b7ac7b9447a128c96d07cf08
 
         $loader->register(true);
 
+        if ($useStaticLoader) {
+            $includeFiles = Composer\Autoload\ComposerStaticInitff41a634b7ac7b9447a128c96d07cf08::$files;
+        } else {
+            $includeFiles = require __DIR__ . '/autoload_files.php';
+        }
+        foreach ($includeFiles as $fileIdentifier => $file) {
+            composerRequireff41a634b7ac7b9447a128c96d07cf08($fileIdentifier, $file);
+        }
+
         return $loader;
+    }
+}
+
+function composerRequireff41a634b7ac7b9447a128c96d07cf08($fileIdentifier, $file)
+{
+    if (empty($GLOBALS['__composer_autoload_files'][$fileIdentifier])) {
+        require $file;
+
+        $GLOBALS['__composer_autoload_files'][$fileIdentifier] = true;
     }
 }

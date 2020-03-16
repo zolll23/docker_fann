@@ -9,10 +9,15 @@
             "email": "andrey.pahomov@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "webmozart/assert": "^1.7"
+    },
     "autoload": {
         "psr-4": {
             "VPA\\": "vendor/VPA/"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
     }
 }

@@ -12,5 +12,12 @@ Add to your hosts file 127.0.0.1 php-docker.local
 Input URL on your browser:
 http://php-docker.local:8080/
 
+------------------
+
+In docker installed composer, you can use it. Example:
+
+Install PHPUnit:
+php /var/www/html/composer.phar require --dev phpunit/phpunit
+
 Bingo!
 

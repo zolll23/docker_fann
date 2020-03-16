@@ -60,9 +60,10 @@ class TrainBase extends \VPA\BinaryStructure implements \ArrayAccess
 
     public function offsetGet($offset):array
     {
-    	if (!isset($this->images[$offset])) {
+    	if (true || !isset($this->images[$offset])) {
     		$binaryOffset = $this->startOffset + $this->blockSize * $offset;
     		$binaryString = $this->getLine($binaryOffset,$this->blockSize);
+    		return $this->toChars($binaryString);
     		$this->images[$offset] = $this->toChars($binaryString);
     	}
     	return $this->images[$offset];

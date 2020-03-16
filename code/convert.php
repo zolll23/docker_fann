@@ -29,12 +29,12 @@ for ($i=0;$i<20;$i++) {
 echo "</tr></table>";
 */
 
-$num_train_data = 40000;
+$num_train_data = 100;
 $num_input = 784;
 $num_output = 10;
 $parts = 40;
 
-	$fd = fopen('train.data','w');
+	$fd = fopen('train_100.data','w');
 	fputs($fd,sprintf("%d %d %d\n", $num_train_data,$num_input,$num_output));
 	for ($i=0; $i<$num_train_data; $i++) {
 		$points = $trainSet[$i];

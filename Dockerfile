@@ -9,5 +9,13 @@ RUN apt-get update &&\
 RUN apt-get update && apt-get install -y libzip-dev libpng-dev && docker-php-ext-install zip
 
 RUN docker-php-ext-install gd
+RUN pecl install xdebug 
+#&& docker-php-ext-install xdebug
+
+RUN apt-get update && apt-get install -y --no-install-recommends git zip
+
+COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+
+RUN curl --silent --show-error https://getcomposer.org/installer | php
     
 RUN rm -rf /var/lib/apt/lists/*
